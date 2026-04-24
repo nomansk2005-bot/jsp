@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    body {
+      margin: 0;
+      background: white;
+    }
+  </style>
+</head>
+<body>
+
+<!-- 🔒 Hidden content (EDIT THESE FROM GITHUB) -->
+<script id="copy1" type="text/plain">
+First secret text
+</script>
+
+<script id="copy2" type="text/plain">
+Second secret text
+</script>
+
+<script id="copy3" type="text/plain">
+Third secret text
+</script>
+
+<script id="copy4" type="text/plain">
+Fourth secret text
+</script>
+
+<script>
+  function copyText(id) {
+    const content = document.getElementById(id).textContent;
+
+    navigator.clipboard.writeText(content)
+      .then(() => console.log("Copied:", id))
+      .catch(err => console.error("Copy failed:", err));
+  }
+
+  document.addEventListener("keydown", function(e) {
+
+    // Ctrl + 1
+    if (e.ctrlKey && e.key === "1") {
+      e.preventDefault();
+      copyText("copy1");
+    }
+
+    // Ctrl + 2
+    if (e.ctrlKey && e.key === "2") {
+      e.preventDefault();
+      copyText("copy2");
+    }
+
+    // Ctrl + 3
+    if (e.ctrlKey && e.key === "3") {
+      e.preventDefault();
+      copyText("copy3");
+    }
+
+    // Ctrl + 4
+    if (e.ctrlKey && e.key === "4") {
+      e.preventDefault();
+      copyText("copy4");
+    }
+
+  });
+</script>
+
+</body>
+</html>
